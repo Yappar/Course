@@ -1,0 +1,31 @@
+from src.reports import df_converter_var, spending_by_category
+from src.services import caregory_filter_variable, json_convert_services
+from src.views import json_convert_views, stock_prices_variable
+
+
+def main(
+    json_convert_views_func, spending_by_category_func, json_convert_services_func
+):
+    """Функция принимает результаты работы модулей reports.py, services.py, views.py и выводит результаты
+    сразу всех модулей"""
+
+    return f"""Веб-страницы. Главная.\n {json_convert_views_func} \n
+    Сервисы. Выгодные категории повышенного кешбэка.\n {spending_by_category_func} \n
+    Отчеты. Траты по категории. \n {json_convert_services_func}"""
+
+
+json_convert_views_func = json_convert_views(stock_prices_variable)
+
+input_category = "Дом и ремонт"
+input_date = "12.12.2021"
+spending_by_category_func = spending_by_category(
+    df_converter_var, input_category, input_date
+)
+
+json_convert_services_func = json_convert_services(caregory_filter_variable)
+
+main_variable = main(
+    json_convert_views_func, spending_by_category_func, json_convert_services_func
+)
+
+print(main_variable)
