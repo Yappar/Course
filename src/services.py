@@ -18,7 +18,7 @@ def year_month_filter(path: str, year: str, month: str):
 
 
 input_year = "2021"
-input_moth = "06"
+input_moth = "08"
 path = "C:\\Users\\yappa\\lsn\\Course_paper_1\\data\\operations.xlsx"
 year_month_filter_variable = year_month_filter(path, input_year, input_moth)
 
