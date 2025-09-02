@@ -16,7 +16,7 @@ def main(
 
 json_convert_views_func = json_convert_views(stock_prices_variable)
 
-input_category = "Дом и ремонт"
+input_category = "Связь"
 input_date = "12.12.2021"
 spending_by_category_func = spending_by_category(
     df_converter_var, input_category, input_date
